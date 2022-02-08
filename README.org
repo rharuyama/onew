@@ -1,0 +1,10 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
+#+options: num:nil toc:nil
+#+options: html-postamble:nil
+
+#+title: onew: Create new org-mode template
+
+* Usage
+#+begin_src
+onew /name/
+#+end_src
