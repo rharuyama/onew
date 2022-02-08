@@ -1,0 +1,10 @@
+body {
+    max-width: 600px;
+    width: 90%;
+    margin: auto auto 200px auto;
+    text-align: justify;
+}
+img {
+    max-width: 600px;
+    width: 100%;
+}
