@@ -1,9 +1,9 @@
 body {
-    max-width: 50%;
+    max-width: 600px;
     width: 90%;
-    margin: auto auto 10% auto;
+    margin: auto auto 200px auto;
 }
 img {
-    max-width: 50%;
+    max-width: 600px;
     width: 100%;
 }
