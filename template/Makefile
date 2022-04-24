@@ -1,16 +1,18 @@
-SRC = template
+PROJ = tmp
 
-open:pdf
-	open $(SRC).pdf &
+open:$(PROJ).new.pdf
+	emacs $(CURDIR)/$(PROJ).new.pdf &
 
-pdf:replace
-	ptex2pdf -l -o "-synctex=1 -file-line-error" $(SRC).tex 
+$(PROJ).new.pdf:$(PROJ).new.tex
+	ptex2pdf -l -o "-synctex=1 -file-line-error" $(PROJ).new.tex
 
-replace:export
-	perl -pe 's/\{article/\{jarticle/; s/Ryo\ Haruyama/春山\　椋/g' -i.bak $(SRC).tex
+$(PROJ).new.tex:$(PROJ).tex
+	perl -pe 's/\{article/\{jarticle/; s/Ryo\ Haruyama/春山\　椋/g' $(PROJ).tex -o > $(PROJ).new.tex
 
-export:
-	emacs $(SRC).org --batch -f org-latex-export-to-latex
+$(PROJ).tex:$(PROJ).org
+	emacs $(PROJ).org --batch -f org-latex-export-to-latex
 
 clean:
-	rm -f *.aux *.log *.out *.gz *.tex *.bak *.pdf *.html
+	rm -f *.aux *.log *.out *.gz *.tex *.bak *.pdf *.html *.toc
+
+.PHONY: clean
