@@ -6,5 +6,5 @@
 
 * Usage
 #+begin_src
-$ onew <name>
+$ onew [NAME]
 #+end_src
