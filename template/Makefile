@@ -1,4 +1,4 @@
-PROJ = tmp
+PROJ = template
 
 open:$(PROJ).new.pdf
 	emacs $(CURDIR)/$(PROJ).new.pdf &
@@ -15,4 +15,4 @@ $(PROJ).tex:$(PROJ).org
 clean:
 	rm -f *.aux *.log *.out *.gz *.tex *.bak *.pdf *.html *.toc
 
-.PHONY: clean
+.PHONY: clean open
