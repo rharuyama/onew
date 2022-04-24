@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ $# -eq 0 ]
+if [ $# != 1 ]
   then
     echo "Usage:\n    onew [NAME]"
 fi
