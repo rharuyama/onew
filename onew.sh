@@ -1,9 +1,14 @@
-#!/bin/sh
-if [ $# != 1 ]
+#!/bin/bash
+set -ex
+
+if [ $# != 1 ];
   then
     echo "Usage:\n    onew [NAME]"
 fi
 
-cp -R /Users/ryoh/.onew/template/ $(pwd)/$1/
-mv $(pwd)/$1/template.org $(pwd)/$1/$1.org
-perl -pi -e "s/template/$1/" $(pwd)/$1/Makefile
+workdir=$(pwd)
+filename=$1
+
+cp -R /Users/ryoh/.onew/template/ $workdir/$filename/
+mv $workdir/$filename/template.org $workdir/$filename/$filename.org
+perl -pi -e "s/template/$filename/" $workdir/$filename/Makefile
